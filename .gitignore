@@ -1,0 +1,35 @@
+# Bytecode files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Poetry
+.poetry/
+poetry.lock
+
+# Virtual environment
+*.venv/
+.env/
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Configuration files
+*.env
+
+# Python artifacts
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# FastAPI specific
+static/
+templates/
