@@ -48,11 +48,10 @@ Antes de começar, certifique-se de que você tem o `Python`, `pipx` e o `Poetry
 
 ### Clonar o Repositório
 
-Se ainda não tiver o projeto, clone-o do repositório. Substitua `<url-do-repositorio>` pela URL do repositório:
+Se ainda não tiver o projeto, clone-o do repositório.
 
 ```bash
-git clone <url-do-repositorio>
-cd <nome-do-repositorio>
+git clone https://github.com/GuilhermeVolpato/LLM-fastapi.git
 ```
 
 ## Configuração do Ambiente
