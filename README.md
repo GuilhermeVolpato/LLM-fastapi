@@ -4,7 +4,7 @@ Este guia irá guiá-lo na configuração e execução do projeto FastAPI utiliz
 
 ## Sobre o projeto
 
-Este projeto é um microsserviço desenvolvido em Python utilizando FastAPI, com integração à API do OpenAI. O objetivo é auxiliar usuários de Ema ERP na análise e compreensão de relatórios empresariais. A API é projetada para receber fotos e/ou arquivos PDF contendo relatórios gerados pelo ERP e fornecer uma análise detalhada e abrangente. Com isso, o sistema ajuda os usuários a interpretar melhor as informações, identificar pontos fortes e fracos da empresa, e realizar uma avaliação mais precisa e informada dos relatórios apresentados.
+Este projeto é um microsserviço desenvolvido em Python utilizando FastAPI, com integração à API do OpenAI. A API foi projetada para receber imagens e arquivos PDF contendo relatórios e fornecer uma análise detalhada e abrangente. Isso auxilia os usuários a interpretarem melhor as informações, identificarem pontos fortes e fracos nos relatórios e realizarem uma avaliação mais precisa e informada. Com essa solução, espera-se que os usuários possam tomar decisões mais embasadas e estratégicas, otimizando a compreensão e o uso dos dados apresentados.
 
 ## Pré-requisitos
 
