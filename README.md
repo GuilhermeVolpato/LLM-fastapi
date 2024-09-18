@@ -4,7 +4,7 @@ Este guia irá guiá-lo na configuração e execução do projeto FastAPI utiliz
 
 ## Sobre o projeto
 
-Este projeto é um microsserviço desenvolvido em Python utilizando FastAPI, com integração à API do OpenAI. A API foi projetada para receber imagens e arquivos PDF contendo relatórios e fornecer uma análise detalhada e abrangente. Isso auxilia os usuários a interpretarem melhor as informações, identificarem pontos fortes e fracos nos relatórios e realizarem uma avaliação mais precisa e informada. Com essa solução, espera-se que os usuários possam tomar decisões mais embasadas e estratégicas, otimizando a compreensão e o uso dos dados apresentados.
+Este projeto é um microsserviço desenvolvido em Python utilizando FastAPI e Langchain, com integração à API do OpenAI. A API foi projetada para receber imagens e arquivos PDF contendo relatórios e fornecer uma análise detalhada e abrangente. Isso auxilia os usuários a interpretarem melhor as informações, identificarem pontos fortes e fracos nos relatórios e realizarem uma avaliação mais precisa e informada. Com essa solução, espera-se que os usuários possam tomar decisões mais embasadas e estratégicas, otimizando a compreensão e o uso dos dados apresentados.
 
 ## Pré-requisitos
 
