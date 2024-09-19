@@ -85,13 +85,19 @@ poetry shell
 poetry install
 ```
 
-## Rodar API
+## Iniciar API
 
 ```bash
 poetry run uvicorn app.main:app --reload
 ```
 
 Seguindo esses passos, você terá configurado e executado o projeto FastAPI utilizando Poetry com sucesso
+
+## Rodar Testes
+
+```bash
+poetry run pytest
+```
 
 ## Documentação
 
