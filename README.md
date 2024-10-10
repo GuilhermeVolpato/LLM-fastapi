@@ -85,10 +85,15 @@ poetry shell
 poetry install
 ```
 
-## Iniciar API
-
+## Rodar API
+```bash
+poetry run python -m app.main
+```
 ```bash
 poetry run uvicorn app.main:app --reload
+```
+```bash
+poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 Seguindo esses passos, você terá configurado e executado o projeto FastAPI utilizando Poetry com sucesso
@@ -98,7 +103,10 @@ Seguindo esses passos, você terá configurado e executado o projeto FastAPI uti
 ```bash
 poetry run pytest
 ```
-
+para ter logs completos rodar:
+```bash
+poetry run pytest -s
+```
 ## Documentação
 
 O fastapi cria documentação swagger automaticamente, para acessa-la , incie o projeto e, em seu navegador, vá para o seguinte endereço:

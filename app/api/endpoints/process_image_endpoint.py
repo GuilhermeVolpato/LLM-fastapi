@@ -8,7 +8,7 @@ router = APIRouter()
 async def process_image_endpoint(file: UploadFile = File(...)):
     try:
         contents = await file.read()
-        summary = process_image_from_bytes(contents)  # Chame a função corretamente
+        summary = process_image_from_bytes(contents) 
         return {"summary": summary}
     except Exception as e:
         logger.error(f"Failed to process image: {str(e)}")

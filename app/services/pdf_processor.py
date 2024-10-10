@@ -5,8 +5,9 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
 from langchain_community.vectorstores.faiss import FAISS
 import tiktoken
+from app.core.logging_config import logger
 
-def process_pdf(contents: bytes) -> str:
+def process_pdf(contents: bytes, message: str = None) -> str:
     try:
         pdf_document = fitz.open(stream=contents, filetype="pdf")
         text_sections = extract_text_by_sections(pdf_document)
@@ -20,20 +21,21 @@ def process_pdf(contents: bytes) -> str:
         )
 
         chunks = text_splitter.create_documents([combined_text])
-        embeddings = OpenAIEmbeddings(openai_api_key=settings.OPENAI_API_KEY, model="text-embedding-ada-002")
-        db = FAISS.from_documents(chunks, embeddings)
+        embeddings = OpenAIEmbeddings(openai_api_key=settings.OPENAI_API_KEY, model="text-embedding-3-small")
+        db = FAISS.from_documents(chunks, embeddings)## caso queira usar o faiss, que serve para consultar banco de dados ou documentos
 
-        llm = ChatOpenAI(openai_api_key=settings.OPENAI_API_KEY, temperature=0.1, model_name="gpt-4-turbo")
+        llm = ChatOpenAI(openai_api_key=settings.OPENAI_API_KEY, temperature=0.1, model_name="gpt-4o-mini",)
         combined_docs = " ".join([chunk.page_content for chunk in chunks])
         messages = [
-            SystemMessage(content="Faça um resumo desse documento, logo a baixo do resumo, faça lista de tópicos importantes e no final uma conclusão."),
+            SystemMessage(content=message if message else "Me de um resumo de pontos importantes desse pdf"),
             HumanMessage(content=combined_docs),
         ]
 
-        response = llm(messages)
+        response = llm.invoke(messages)
         summary = response.content.replace('\n', ' ').strip()
         return summary
     except Exception as e:
+        logger.error(f"Failed to process PDF: {str(e)}")
         raise ValueError(f"Failed to process PDF: {str(e)}")
 
 def extract_text_by_sections(pdf_document):

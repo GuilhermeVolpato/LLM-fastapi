@@ -8,6 +8,10 @@ package-mode = false
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
@@ -23,6 +27,8 @@ python-multipart = "^0.0.9"
 python-dotenv = "^1.0.1"
 pytesseract = "^0.3.13"
 easyocr = "^1.7.1"
+openai = ">=1.40.0,<2.0.0"
+colorlog = "^6.8.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
